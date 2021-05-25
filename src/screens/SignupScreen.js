@@ -12,7 +12,7 @@ const SignupScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Spacer>
-        <Text h3>Sign Up for Tracker</Text>
+        <Text h2>Sign Up for Tracker</Text>
       </Spacer>
       <Input
         label="Email"
@@ -30,6 +30,9 @@ const SignupScreen = ({ navigation }) => {
         autoCorrect={false}
         secureTextEntry={true}
       />
+      {state.errorMessage ? (
+        <Text style={styles.error}>{state.errorMessage}</Text>
+      ) : null}
       <Spacer>
         <Button
           title="Sign Up"
@@ -51,6 +54,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     marginBottom: 150,
+  },
+  error: {
+    fontSize: 16,
+    marginHorizontal: 15,
+    marginTop: 15,
+    color: "red",
   },
 });
 
