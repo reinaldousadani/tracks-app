@@ -30,7 +30,7 @@ const SignupScreen = ({ navigation }) => {
         autoCorrect={false}
         secureTextEntry={true}
       />
-      {state.errorMessage ? (
+      {state.errorMessage !== "" ? (
         <Text style={styles.error}>{state.errorMessage}</Text>
       ) : null}
       <Spacer>
