@@ -6,6 +6,8 @@ import Map from "../components/Map";
 import { Text } from "react-native-elements";
 import { Context as LocationContext } from "../context/LocationContext";
 import useLocation from "../hooks/useLocation";
+import TrackForm from "../components/TrackForm";
+import Spacer from "../components/Spacer";
 
 const TrackCreateScreen = ({ isFocused }) => {
   const { addLocation } = useContext(LocationContext);
@@ -21,6 +23,8 @@ const TrackCreateScreen = ({ isFocused }) => {
       </Text>
       <Map />
       {error ? <Text>Please grant the location permission.</Text> : null}
+      <Spacer />
+      <TrackForm />
     </SafeAreaView>
   );
 };
