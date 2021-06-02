@@ -13,9 +13,8 @@ const fetchTracks = (dispatch) => {
 };
 
 const createTrack = (dispatch) => {
-  return (name, locations) => {
-    // will send POST request to express api here
-    console.log(name, locations);
+  return async (name, locations) => {
+    await trackerApi.post("/tracks", { name: name, locations: locations });
   };
 };
 
