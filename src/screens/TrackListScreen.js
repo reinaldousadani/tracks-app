@@ -14,9 +14,6 @@ const TrackListScreen = ({ navigation }) => {
       style={{ paddingTop: Platform.OS === "android" ? 25 : 0 }}
     >
       <NavigationEvents onWillFocus={fetchTracks} />
-      <Text h2 style={{ textAlign: "center" }}>
-        Track Screen
-      </Text>
       <FlatList
         data={state}
         keyExtractor={(item) => item._id}
@@ -43,7 +40,7 @@ const TrackListScreen = ({ navigation }) => {
 
 TrackListScreen.navigationOptions = () => {
   return {
-    headerShown: false,
+    title: "Tracks",
   };
 };
 
