@@ -14,11 +14,6 @@ const Map = () => {
   return (
     <MapView
       style={styles.map}
-      initialRegion={{
-        ...currentLocation.coords,
-        latitudeDelta: 0.01,
-        longitudeDelta: 0.01,
-      }}
       region={{
         ...currentLocation.coords,
         latitudeDelta: 0.01,
@@ -31,7 +26,11 @@ const Map = () => {
         strokeColor="rgba(158,158,255,1)"
         fillColor="rgba(158,158,255,.5)"
       />
-      <Polyline coordinates={locations.map((loc) => loc.coords)} />
+      <Polyline
+        coordinates={locations
+          .filter((loc) => loc.hasOwnProperty("mocked") === false)
+          .map((loc) => loc.coords)}
+      />
     </MapView>
   );
 };

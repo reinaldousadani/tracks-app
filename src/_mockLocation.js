@@ -1,5 +1,4 @@
 import * as Location from "expo-location";
-
 const tenMetersWithDegrees = 0.0001;
 
 const getLocation = (increment) => {
@@ -11,8 +10,8 @@ const getLocation = (increment) => {
       acccuracy: 5,
       altitudeAccuracy: 5,
       altitude: 5,
-      longitude: -122.0312186 + increment * tenMetersWithDegrees, // Apple Headquarter at Cupertino
-      latitude: 37.33233141 + increment * tenMetersWithDegrees,
+      longitude: -122.084 + increment * tenMetersWithDegrees,
+      latitude: 37.4219983 + increment * tenMetersWithDegrees,
     },
   };
 };

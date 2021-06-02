@@ -12,7 +12,10 @@ const fetchTracks = (dispatch) => {
 };
 
 const createTrack = (dispatch) => {
-  return () => {};
+  return (name, locations) => {
+    // will send POST request to express api here
+    console.log(name, locations);
+  };
 };
 
 export const { Context, Provider } = createDataContext(
